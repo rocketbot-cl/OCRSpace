@@ -5,7 +5,7 @@ Module for extract text from PDF file.
 
 <ul>
   <li>
-    For create an account go to <a href="https://us11.list-manage.com/subscribe?u=ce17e59f5b68a2fd3542801fd&id=252aee70a1">
+    To create an account go to <a href="https://us11.list-manage.com/subscribe?u=ce17e59f5b68a2fd3542801fd&id=252aee70a1">
     OCR Space
     </a>
   </li>
