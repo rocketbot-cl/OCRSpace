@@ -13,6 +13,10 @@ Module for extract text from PDF file.
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/OCRSpace/master/example/ocrspace.png)
 
+Video Example
+
+ [![OCRSpace](https://img.youtube.com/vi/_v3-w5ScDPw/0.jpg)](https://www.youtube.com/watch?v=_v3-w5ScDPw "OCRSpace")
+
 <h2>Link to API Documentation</h2>
 
 <ul>
