@@ -50,17 +50,21 @@ def ocr_space_file(filename, overlay=False, api_key='helloworld', language='eng'
                     Defaults to 'en'.
     :return: Result in JSON format.
     """
-
-    payload = {'isOverlayRequired': overlay,
-               'apikey': api_key,
-               'language': language,
-               }
-    with open(filename, 'rb') as f:
-        r = requests.post('https://api.ocr.space/parse/image',
-                          files={filename: f},
-                          data=payload,
-                          )
-    return r.json()
+    try:
+        payload = {'isOverlayRequired': overlay,
+                'apikey': api_key,
+                'language': language,
+                }
+        with open(filename, 'rb') as f:
+            r = requests.post('https://api.ocr.space/parse/image',
+                            files={filename: f},
+                            data=payload,
+                            verify=False
+                            )
+        return r.json()
+    except Exception as e:
+        PrintException()
+        raise e
 
 if module == "GetOCR":
     File = GetParams("File")
