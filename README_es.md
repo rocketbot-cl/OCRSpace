@@ -1,7 +1,3 @@
-
-
-
-
 # OCR Space
   
 Modulo para aplicar OCR sobre una imagen web o archivo  

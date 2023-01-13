@@ -1,6 +1,6 @@
 # OCR Space
   
-Modulo para aplicar OCR sobre una imagen web o archivo  
+Módulo para aplicar OCR em uma imagem ou arquivo da web
   
 ![banner](imgs/Banner_OCRSpace.png)
 ## Como instalar este módulo

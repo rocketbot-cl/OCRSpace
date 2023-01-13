@@ -1,10 +1,6 @@
-
-
-
-
 # OCR Space
   
-Modulo para aplicar OCR sobre una imagen web o archivo  
+Módulo para aplicar OCR em uma imagem ou arquivo da web
 
 ## Como instalar este módulo
   
