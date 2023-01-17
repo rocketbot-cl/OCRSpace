@@ -1,18 +1,18 @@
 # OCR Space
   
-Module to apply OCR on a web image or file
+Modulo para aplicar OCR sobre una imagen web o archivo  
 
-## How to install this module
+## Como instalar este módulo
   
-__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
+__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  
 
 
 
 ## Overview
 
 
-1. OCR Space convert file  
-Extract text from file.  
+1. OCR Space convertir archivo  
+Extrae texto de un archivo.  
 
 
 
