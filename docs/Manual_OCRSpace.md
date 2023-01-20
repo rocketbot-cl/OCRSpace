@@ -2,7 +2,7 @@
   
 Module to apply OCR on a web image or file
   
-![banner](imgs/Banner_OCRSpace.png)
+![banner](imgs/Banner_OCRSpace.jpg)
 ## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
