@@ -1,8 +1,13 @@
 {
     "author":"David Cuello",
     "description": "Module to apply OCR on a web image or file | Módulo para aplicar OCR em uma imagem ou arquivo da web | Modulo para aplicar OCR sobre una imagen web o archivo",
+    "description_lang":{
+        "en":"This module allows you to extract text from images or PDF files using the OCR.space API.",
+        "es":"Este módulo permite extraer texto de imágenes o archivos PDF utilizando la API de OCR.space.",
+        "pr":"Este módulo permite extrair texto de imagens ou arquivos PDF usando a API OCR.space."
+    },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"1.0.0",
+    "version":"1.0.1",
     "license": "MIT",
     "homepage":"http://rocketbot.com/",
     "linux": true,
@@ -61,7 +66,7 @@
                             "pr": "Selecione o arquivo para o qual deseja extrair o texto"
                         },
                         "id": "File",
-                        "css": "col-md-12"
+                        "css": "col-md-6"
                     },
                     {
                         "type": "input",
@@ -84,6 +89,82 @@
                         "css": "col-md-6"
                     },
                     {
+                        "type": "select",
+                        "placeholder": {
+                            "es": "Engine 1",
+                            "en": "Engine 1",
+                            "pr": "Engine 1"
+                        },
+                        "title": {
+                            "es": "OCR Engine",
+                            "en": "OCR Engine",
+                            "pr": "OCR Engine"
+                        },
+						"options": [
+                            {
+                                "title": "- Select -",
+                                "value": ""
+                            },                            
+							{
+								"title": "OCR Engine 1",
+								"value": "1"
+							},
+							{
+								"title": "OCR Engine 2",
+								"value": "2"
+							}
+						],
+                        "help": {
+                            "en": "The different OCR engines on https://ocr.space/ocrapi#ocrengine",
+                            "es": "Los diferentes motores OCR en https://ocr.space/ocrapi#ocrengine",
+                            "pr": "Todos os mecanismos OCR https://ocr.space/ocrapi#ocrengine"
+                        },
+                        "id": "engine",
+                        "css": "col-md-6",
+                        "default": null,
+                        "required": false                        
+                    },
+                    {
+                        "type": "select",
+                        "placeholder": {
+                            "es": "Español",
+                            "en": "English",
+                            "pr": "Portuguese"
+                        },
+                        "title": {
+                            "es": "Idioma",
+                            "en": "Language",
+                            "pr": "Linguagem"
+                        },
+						"options": [
+                            {
+                                "title": "- Select -",
+                                "value": ""
+                            },                             
+							{
+								"title": "Español",
+								"value": "spa"
+							},
+							{
+								"title": "Ingles",
+								"value": "eng"
+							},
+							{
+								"title": "Portugues",
+								"value": "por"
+							}                            
+						],
+                        "help": {
+                            "en": "Select a language only if you use OCR engine 1",
+                            "es": "Seleccione un idioma solo si usa OCR engine 1",
+                            "pr": "Selecione um idioma somente se você usar o mecanismo OCR 1"
+                        },
+                        "id": "lang",
+                        "css": "col-md-6",
+                        "default": null,
+                        "required": false
+                    },                                        
+                    {
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
@@ -91,9 +172,9 @@
                             "pr": "Variável"
                         },
                         "title": {
-                            "es": "Resutlado",
+                            "es": "Resultado",
                             "en": "Result",
-                            "pr": "Resutlado"
+                            "pr": "Resultado"
                         },
                         "help": {
                             "en": "Variable where the result is stored without {}",
@@ -103,7 +184,87 @@
                         "id": "result",
                         "remove_vars": true,
                         "css": "col-md-6"
-                    }
+                    },
+                    {
+                        "type": "select",
+                        "placeholder": {
+                            "es": "Default",
+                            "en": "Default",
+                            "pr": "Default"
+                        },
+                        "title": {
+                            "es": "Presentacion Resultados",
+                            "en": "Results presentation",
+                            "pr": "Apresentação dos resultados"
+                        },
+						"options": [
+                            {
+                                "title": "- Default -",
+                                "value": ""
+                            },                             
+							{
+								"title": "Lista de Lineas",
+								"value": "LineText"
+							},
+							{
+								"title": "Lista de Palabras",
+								"value": "WordText"
+							},
+							{
+								"title": "Texto Plano",
+								"value": "ParsedText"
+							}                            
+						],
+                        "help": {
+                            "en": "Hace referencia a la como se muestran los resultados",
+                            "es": "It refers to the way the results are displayed",
+                            "pr": "Relaciona-se à apresentação dos resultados"
+                        },
+                        "id": "res",
+                        "css": "col-md-6",
+                        "default": null,
+                        "required": false
+                    },                                              
+                    {
+                        "type": "checkbox",
+                        "placeholder": {
+                          "es": "True",
+                          "en": "True",
+                          "pr": "True"
+                        },
+                        "description": {
+                          "es": "Si se marca esta casilla, realiza un aumento de escala interno",
+                          "en": "If this box is checked, does some internal upscaling",
+                          "pr": "Se esta caixa estiver marcada, realiza um aumento de escala interno."
+                        },
+                        "title": {
+                          "es": "Aplicar Escala",
+                          "en": "Apply scale",
+                          "pr": "Aplicar escala"
+                        },
+                        "id": "scale",
+                        "css": "col-md-3"
+                      },
+                      {
+                        "type": "checkbox",
+                        "placeholder": {
+                          "es": "True",
+                          "en": "True",
+                          "pr": "True"
+                        },
+                        "description": {
+                          "es": "Si se marca esta casilla, el resultado se ordena línea por línea.",
+                          "en": "If this box is checked, result text is sorted line by line.",
+                          "pr": "Se esta caixa estiver marcada, O resultado é classificado linha por linha."
+                        },
+                        "title": {
+                          "es": "Interpretar tabla",
+                          "en": "Read a table",
+                          "pr": "Detecção de tabelas"
+                        },
+                        "id": "table",
+                        "css": "col-md-3"
+                      }                                         
 
                 ]
             },

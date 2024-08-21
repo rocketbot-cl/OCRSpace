@@ -37,7 +37,7 @@ module = GetParams("module")
     Resuelvo catpcha tipo reCaptchav2
 """
 
-def ocr_space_file(filename, overlay=False, api_key='helloworld', language='eng'):
+def ocr_space_file(filename, overlay=False, api_key='helloworld', engine=1, scale=False, isTable=False, language='eng'):
     """ OCR.space API request with local file.
         Python3.5 - not tested on 2.7
     :param filename: Your file path & name.
@@ -45,6 +45,12 @@ def ocr_space_file(filename, overlay=False, api_key='helloworld', language='eng'
                     Defaults to False.
     :param api_key: OCR.space API key.
                     Defaults to 'helloworld'.
+    :param engine: OCR engine to use.
+                    Defaults to 1. 
+    :param scale: Apply internal upscaling.
+                    Defaults to False.
+    :param isTable: Read a table.
+                    Defaults to False.                                               
     :param language: Language code to be used in OCR.
                     List of available language codes can be found on https://ocr.space/OCRAPI
                     Defaults to 'en'.
@@ -54,6 +60,9 @@ def ocr_space_file(filename, overlay=False, api_key='helloworld', language='eng'
         payload = {'isOverlayRequired': overlay,
                 'apikey': api_key,
                 'language': language,
+                'scale': scale,
+                'isTable': isTable,
+                'OCREngine': engine,
                 }
         with open(filename, 'rb') as f:
             r = requests.post('https://api.ocr.space/parse/image',
@@ -65,12 +74,51 @@ def ocr_space_file(filename, overlay=False, api_key='helloworld', language='eng'
     except Exception as e:
         PrintException()
         raise e
+def extract_line_text(json_data, res):
+    """Extrae datos específicos del JSON según el valor de 'res'.
+    :param json_data: The JSON data as a Python dictionary
+    :param res: A string indicating which type of data to extract
+    :return: A list containing the extracted data.        
+    """
+    try:
+        data = []
+        if res == "LineText":
+            for parsed_result in json_data['ParsedResults']:
+                for line in parsed_result['TextOverlay']['Lines']:
+                    data.append(line['LineText'])
+        elif res == "WordText":
+            for parsed_result in json_data['ParsedResults']:
+                for line in parsed_result['TextOverlay']['Lines']:
+                    for word in line['Words']:
+                        data.append(word['WordText'])
+        elif res == "ParsedText":
+            for parsed_result in json_data['ParsedResults']:
+                 #parsed_result.replace('\t', '').replace('\r\n', '')
+                 data.append(parsed_result['ParsedText'].replace('\t', '').replace('\r\n', '').replace('\n', ''))
+        return data
+    except Exception as e:
+        PrintException()
+        raise e
 
+    
 if module == "GetOCR":
     File = GetParams("File")
     Key = GetParams("key")
-    var_ = GetParams("result")    
-    data = ocr_space_file(File,overlay=True, api_key=Key)
+    var_ = GetParams("result")
+    ocr = GetParams("engine")
+    lang = GetParams("lang")
+    xScale = GetParams("scale")
+    xTable = GetParams("table")
+    res = GetParams("res")
+    if ocr:
+  
+        data = ocr_space_file(File,overlay=True, api_key=Key, engine=ocr, scale=xScale, isTable=xTable, language=lang)
+        
+    else:
+
+        data = ocr_space_file(File,overlay=True, api_key=Key)
+    if res:
+         data = extract_line_text(data, res)
     try:
         SetVar( var_,  data)
     except Exception as e:
