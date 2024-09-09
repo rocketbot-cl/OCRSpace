@@ -1,10 +1,15 @@
 {
     "author":"David Cuello",
-    "description": "Modulo para aplicar OCR sobre una imagen web o archivo",
+    "description": "Module to apply OCR on a web image or file | Módulo para aplicar OCR em uma imagem ou arquivo da web | Modulo para aplicar OCR sobre una imagen web o archivo",
+    "description_lang":{
+        "en":"This module allows you to extract text from images or PDF files using the OCR.space API.",
+        "es":"Este módulo permite extraer texto de imágenes o archivos PDF utilizando la API de OCR.space.",
+        "pr":"Este módulo permite extrair texto de imagens ou arquivos PDF usando a API OCR.space."
+    },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"1.0",
+    "version":"1.0.1",
     "license": "MIT",
-    "homepage":"http://rocketbot.co/",
+    "homepage":"http://rocketbot.com/",
     "linux": true,
     "windows":true,
     "mac":true,
@@ -16,7 +21,7 @@
     "title": {
         "en": "OCR Space",
         "es": "OCR Space",
-        "cn": "OCR Space"
+        "pr": "OCR Space"
     },
     "icon": "data:image/png;base64,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",
     "children": [
@@ -29,8 +34,14 @@
                 "options":null
             },
             "es": {
-                "title": "OCR Space convertir Archivo",
+                "title": "OCR Space convertir archivo",
                 "description": "Extrae texto de un archivo.",
+                "title_options": null,
+                "options":null
+            },
+            "pr": {
+                "title": "OCR Space converter arquivo",
+                "description": "Extrair texto de um arquivo.",
                 "title_options": null,
                 "options":null
             },
@@ -41,53 +52,219 @@
                         "type": "file_select",
                         "placeholder": {
                             "es": "archivo.pdf",
-                            "en": "file.pdf"
+                            "en": "file.pdf",
+                            "pr": "arquivo.pdf"
                         },
                         "title": {
                             "es": "Archivo:",
-                            "en": "File:"
+                            "en": "File:",
+                            "pr": "Arquivo:"
                         },
                         "help": {
                             "es": "Seleccione el archivo al que quiere extraer el texto",
-                            "en": "Select file to extract text"
+                            "en": "Select file to extract text",
+                            "pr": "Selecione o arquivo para o qual deseja extrair o texto"
                         },
                         "id": "File",
-                        "css": "col-md-12"
+                        "css": "col-md-6"
                     },
                     {
                         "type": "input",
                         "placeholder": {
                             "es": "12345678",
-                            "en": "12345678"
+                            "en": "12345678",
+                            "pr": "12345678"
                         },
                         "title": {
                             "es": "Key de OCR.Space",
-                            "en": "Key OCR.Space"
+                            "en": "Key OCR.Space",
+                            "pr": "Key do OCR.Space"
                         },
                         "help": {
-                            "en": "Obtain your api on https://ocr.space",
-                            "es": "Busque su key en https://ocr.space"
+                            "en": "Obtain your key on https://ocr.space",
+                            "es": "Busque su key en https://ocr.space",
+                            "pr": "Procure sua key em https://ocr.space"
                         },
                         "id": "key",
                         "css": "col-md-6"
                     },
                     {
+                        "type": "select",
+                        "placeholder": {
+                            "es": "Engine 1",
+                            "en": "Engine 1",
+                            "pr": "Engine 1"
+                        },
+                        "title": {
+                            "es": "OCR Engine",
+                            "en": "OCR Engine",
+                            "pr": "OCR Engine"
+                        },
+						"options": [
+                            {
+                                "title": "- Select -",
+                                "value": ""
+                            },                            
+							{
+								"title": "OCR Engine 1",
+								"value": "1"
+							},
+							{
+								"title": "OCR Engine 2",
+								"value": "2"
+							}
+						],
+                        "help": {
+                            "en": "The different OCR engines on https://ocr.space/ocrapi#ocrengine",
+                            "es": "Los diferentes motores OCR en https://ocr.space/ocrapi#ocrengine",
+                            "pr": "Todos os mecanismos OCR https://ocr.space/ocrapi#ocrengine"
+                        },
+                        "id": "engine",
+                        "css": "col-md-6",
+                        "default": null,
+                        "required": false                        
+                    },
+                    {
+                        "type": "select",
+                        "placeholder": {
+                            "es": "Español",
+                            "en": "English",
+                            "pr": "Portuguese"
+                        },
+                        "title": {
+                            "es": "Idioma",
+                            "en": "Language",
+                            "pr": "Linguagem"
+                        },
+						"options": [
+                            {
+                                "title": "- Select -",
+                                "value": ""
+                            },                             
+							{
+								"title": "Español",
+								"value": "spa"
+							},
+							{
+								"title": "Ingles",
+								"value": "eng"
+							},
+							{
+								"title": "Portugues",
+								"value": "por"
+							}                            
+						],
+                        "help": {
+                            "en": "Select a language only if you use OCR engine 1",
+                            "es": "Seleccione un idioma solo si usa OCR engine 1",
+                            "pr": "Selecione um idioma somente se você usar o mecanismo OCR 1"
+                        },
+                        "id": "lang",
+                        "css": "col-md-6",
+                        "default": null,
+                        "required": false
+                    },                                        
+                    {
                         "type": "input",
                         "placeholder": {
                             "es": "Variable",
-                            "en": "Variable"
+                            "en": "Variable",
+                            "pr": "Variável"
                         },
                         "title": {
-                            "es": "Resutlado",
-                            "en": "Result"
+                            "es": "Resultado",
+                            "en": "Result",
+                            "pr": "Resultado"
                         },
                         "help": {
                             "en": "Variable where the result is stored without {}",
-                            "es": "Variable donde se almacena el resultado sin {}"
+                            "es": "Variable donde se almacena el resultado sin {}",
+                            "pr": "Variável onde o resultado é armazenado sem {}"
                         },
                         "id": "result",
+                        "remove_vars": true,
                         "css": "col-md-6"
-                    }
+                    },
+                    {
+                        "type": "select",
+                        "placeholder": {
+                            "es": "Default",
+                            "en": "Default",
+                            "pr": "Default"
+                        },
+                        "title": {
+                            "es": "Presentacion Resultados",
+                            "en": "Results presentation",
+                            "pr": "Apresentação dos resultados"
+                        },
+						"options": [
+                            {
+                                "title": "- Default -",
+                                "value": ""
+                            },                             
+							{
+								"title": "Lista de Lineas",
+								"value": "LineText"
+							},
+							{
+								"title": "Lista de Palabras",
+								"value": "WordText"
+							},
+							{
+								"title": "Texto Plano",
+								"value": "ParsedText"
+							}                            
+						],
+                        "help": {
+                            "en": "Hace referencia a la como se muestran los resultados",
+                            "es": "It refers to the way the results are displayed",
+                            "pr": "Relaciona-se à apresentação dos resultados"
+                        },
+                        "id": "res",
+                        "css": "col-md-6",
+                        "default": null,
+                        "required": false
+                    },                                              
+                    {
+                        "type": "checkbox",
+                        "placeholder": {
+                          "es": "True",
+                          "en": "True",
+                          "pr": "True"
+                        },
+                        "description": {
+                          "es": "Si se marca esta casilla, realiza un aumento de escala interno",
+                          "en": "If this box is checked, does some internal upscaling",
+                          "pr": "Se esta caixa estiver marcada, realiza um aumento de escala interno."
+                        },
+                        "title": {
+                          "es": "Aplicar Escala",
+                          "en": "Apply scale",
+                          "pr": "Aplicar escala"
+                        },
+                        "id": "scale",
+                        "css": "col-md-3"
+                      },
+                      {
+                        "type": "checkbox",
+                        "placeholder": {
+                          "es": "True",
+                          "en": "True",
+                          "pr": "True"
+                        },
+                        "description": {
+                          "es": "Si se marca esta casilla, el resultado se ordena línea por línea.",
+                          "en": "If this box is checked, result text is sorted line by line.",
+                          "pr": "Se esta caixa estiver marcada, O resultado é classificado linha por linha."
+                        },
+                        "title": {
+                          "es": "Interpretar tabla",
+                          "en": "Read a table",
+                          "pr": "Detecção de tabelas"
+                        },
+                        "id": "table",
+                        "css": "col-md-3"
+                      }                                         
 
                 ]
             },

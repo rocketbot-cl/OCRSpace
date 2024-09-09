@@ -1,34 +1,40 @@
-# OCRSpace
-Module for extract text from PDF file.
 
-**In the example robot you must change the URL for yours
 
-<ul>
-  <li>
-    To create an account go to <a href="https://us11.list-manage.com/subscribe?u=ce17e59f5b68a2fd3542801fd&id=252aee70a1">
-    OCR Space
-    </a>
-  </li>
-</ul>  
 
-![alt text](https://raw.githubusercontent.com/rocketbot-cl/OCRSpace/master/example/ocrspace.png)
 
-Video Example
+# OCR Space
+  
+This module allows you to extract text from images or PDF files using the OCR.space API.  
 
- [![OCRSpace](https://img.youtube.com/vi/_v3-w5ScDPw/0.jpg)](https://www.youtube.com/watch?v=_v3-w5ScDPw "OCRSpace")
+*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
 
-<h2>Link to API Documentation</h2>
+## How to install this module
+  
+To install the module in Rocketbot Studio, it can be done in two ways:
+1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
 
-<ul>
-  <li>
-    <a href="https://ocr.space/OCRAPI">API OCR Space</a>
-  </li>  
-</ul>  
 
-<h2>License</h2>
+## Overview
 
-<p><a href="http://badges.mit-license.org" rel="nofollow"><img src="https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265" alt="License" data-canonical-src="http://img.shields.io/:license-mit-blue.svg?style=flat-square" style="max-width:100%;"></a></p>
 
-<ul>
-  <li><strong><a href="http://opensource.org/licenses/mit-license.php" rel="nofollow">MIT license</a></strong></li>
-</ul>  
+1. OCR Space convert file  
+Extract text from file.  
+
+
+
+
+----
+### OS
+
+- windows
+- mac
+- linux
+- docker
+
+### Dependencies
+- [**requests**](https://pypi.org/project/requests/)
+### License
+  
+![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  
+[MIT](http://opensource.org/licenses/mit-license.ph)
